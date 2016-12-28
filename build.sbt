@@ -6,6 +6,12 @@ val commonSettings = Seq(
       url("https://github.com/tkawachi/play-logback-ui/"),
       "scm:git:github.com:tkawachi/play-logback-ui.git"
     )),
+  homepage := Some(url("https://github.com/tkawachi/play-logback-ui/")),
+  developers := List(
+    Developer("tkawachi",
+              "Takashi Kawachi",
+              "tkawachi@gmail.com",
+              url("https://github.com/tkawachi"))),
   scalaVersion := "2.11.8",
   scalacOptions ++= Seq(
     "-deprecation",
