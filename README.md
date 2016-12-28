@@ -1,6 +1,6 @@
 # play-logback-ui
 
-Play logback UI
+Changing logback log level from browser.
 
 ![](screen.png)
 
