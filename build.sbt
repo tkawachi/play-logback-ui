@@ -29,7 +29,8 @@ lazy val root = project
   .settings(commonSettings: _*)
   .settings(
     name := "play-logback-ui-root",
-    description := "Play logback UI root"
+    description := "Play logback UI root",
+    publishArtifact := false
   )
   .aggregate(core, sample)
 
@@ -52,7 +53,8 @@ lazy val sample = project
   .settings(
     commonSettings ++ Seq(
       name := "play-logback-ui-sample",
-      description := "Play logback UI sample"
+      description := "Play logback UI sample",
+      publishArtifact := false
     )
   )
   .dependsOn(core)
