@@ -1,0 +1,52 @@
+@import ch.qos.logback.classic.{Logger,Level}
+@import com.github.tkawachi.playlogbackui.routes
+@(loggers: Seq[Logger])
+
+@option(logger: Logger, level: Level) = {
+    <option value="@level.toString" @if(level == logger.getLevel) {selected}>
+        @level
+    </option>
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>logback UI</title>
+</head>
+<body>
+<section class="content">
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>effective level</th>
+            <th>level</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @loggers.map {l =>
+        <tr>
+            <td>@l.getName</td>
+            <td>@l.getEffectiveLevel</td>
+            <td>
+                <form action="@routes.HomeController.change" method="POST">
+                    <input type="hidden" name="name" value="@l.getName">
+                    <select name="level">
+                        @if(l.getName != "ROOT") {
+                            <option value=""></option>
+                        }
+                        @Seq(Level.OFF, Level.ERROR, Level.WARN, Level.INFO, Level.DEBUG, Level.TRACE, Level.ALL).map { level =>
+                            @option(l, level)
+                        }
+                    </select>
+                    <input type="submit" value="change">
+                </form>
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

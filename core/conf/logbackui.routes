@@ -1,0 +1,2 @@
+GET  /                 com.github.tkawachi.playlogbackui.HomeController.index()
+POST /change           com.github.tkawachi.playlogbackui.HomeController.change()
