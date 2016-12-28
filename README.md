@@ -16,4 +16,6 @@ Add a following line to conf/routes:
 -> /logbackui logbackui.Routes
 ```
 
-`sbt run` and access http://localhost:9000/logbackui ＼(^o^)／
+`/logbackui` is just an example. Change it as you like.
+
+`sbt run` and access [http://localhost:9000/logbackui](http://localhost:9000/logbackui)
