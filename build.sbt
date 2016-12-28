@@ -25,7 +25,7 @@ lazy val root = project
     name := "play-logback-ui-root",
     description := "Play logback UI root"
   )
-  .aggregate(core)
+  .aggregate(core, sample)
 
 lazy val core = project
   .in(file("core"))
